@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProntoLook - Gestão de Catálogo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script-loja.js" defer></script>
+</head>
+
+<body>
+
+    <h1>ProntoLook Admin 👔</h1>
+
+    <button id="btnListar">Atualizar Vitrine</button>
+
+    <h2>Cadastrar Novo Produto</h2>
+
+    <div class="form">
+        <input type="text" id="campoPeca" placeholder="Nome da peça (ex: Camiseta Slim)">
+        <input type="number" id="campoPreco" placeholder="Preço (ex: 89.90)">
+        <input type="text" id="campoCategoria" placeholder="Categoria (ex: Masculino)">
+        <input type="hidden" id="campoLojaId" value="1">
+        <button id="btnSalvar">Salvar</button>
+    </div>
+
+    <h2>Vitrine Atual</h2>
+
+    <div id="listagem" class="container"></div>
+
+    <div id="loader" class="loader" style="display: none;">Conectando ao banco...</div>
+
+    <div id="modalEditar" class="modal" style="display: none;">
+        <div class="modal-conteudo">
+            <h3>Editar Produto</h3>
+
+            <input type="hidden" id="editId">
+
+            <label>Nome da Peça</label>
+            <input type="text" id="editPeca">
+
+            <label>Preço</label>
+            <input type="number" id="editPreco">
+
+            <label>Categoria</label>
+            <input type="text" id="editCategoria">
+
+            <div class="modal-botoes">
+                <button id="btnSalvarEdicao">Salvar Alterações</button>
+                <button onclick="fecharModal()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
